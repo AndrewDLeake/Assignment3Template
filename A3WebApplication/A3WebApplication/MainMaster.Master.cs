@@ -12,6 +12,16 @@ namespace A3WebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
             // NOTE: You will need to use the Security Class to determine if logged in or not
+            btnLogout.Visible = Security.IsCustomerLoggedIn();
+            hlLogin.Visible = !Security.IsCustomerLoggedIn();
+            hlAdmin.Visible = Security.IsCustomerAdmin();
+
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Security.LogOut();
+            Response.Redirect("Categories.aspx");
         }
     }
 }

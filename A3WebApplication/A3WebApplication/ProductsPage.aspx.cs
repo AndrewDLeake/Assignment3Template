@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A3ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,15 @@ namespace A3WebApplication
             /* TODO:
                 - 3 MARKS: grab CategoryID from QueryString and Populate the products based on the CategoryID
             */
+            dlProducts.DataSource = Product.GetProductsByCategoryID(ToNullableInt32(Request.QueryString["CategoryID"]));
+            dlProducts.DataBind();
+        }
+
+        public int? ToNullableInt32(string s)
+        {
+            int i;
+            if (Int32.TryParse(s, out i)) return i;
+            return null;
         }
 
         protected void dlProducts_ItemCommand(object source, DataListCommandEventArgs e)

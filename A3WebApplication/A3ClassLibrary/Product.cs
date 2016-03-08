@@ -65,7 +65,34 @@ namespace A3ClassLibrary
         
         // TODO 
         // 2 MARKS: write a method which impliments spInsertProduct
+        public void InsertProduct()
+        {
+            DAL_Project.DAL d = new DAL_Project.DAL(ConfigurationManager.ConnectionStrings["dbA3ConnStr"].ConnectionString);
+            d.AddParam("Name", this.Name);
+            d.AddParam("Price", this.Price);
+            d.AddParam("CategoryID", this.CategoryID);
+            d.AddParam("ImagePath", this.PrimaryImagePath);
+            d.ExecuteProcedure("spInsertProduct");
+        }
         // 2 MARKS: write a method which impliments spDeleteProduct
+        public void DeleteProduct()
+        {
+
+                DAL_Project.DAL d = new DAL_Project.DAL(ConfigurationManager.ConnectionStrings["dbA3ConnStr"].ConnectionString);
+                d.AddParam("ProductID", this.ProductID);
+                d.ExecuteProcedure("spDeleteProduct");
+
+        }
         // 2 MARKS: write a method which impliments spUpdateProduct
+        public void UpdateProduct()
+        {
+            DAL_Project.DAL d = new DAL_Project.DAL(ConfigurationManager.ConnectionStrings["dbA3ConnStr"].ConnectionString);
+            d.AddParam("ProductID", this.ProductID);
+            d.AddParam("Name", this.Name);
+            d.AddParam("Price", this.Price);
+            d.AddParam("CategoryID", this.CategoryID);
+            d.AddParam("ImagePath", this.PrimaryImagePath);
+            d.ExecuteProcedure("spUpdateProduct");
+        }
     }
 }

@@ -66,6 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\GruntNoMask.jpg" />
+    <Content Include="Images\KakashiHatake.png" />
+    <Content Include="Images\Naruto.png" />
+    <Content Include="Images\noimage.png" />
+    <Content Include="Images\SakuraHaruno.png" />
+    <Content Include="Images\Sasuke.png" />
     <Content Include="packages.config" />
     <Content Include="MainMaster.Master" />
     <None Include="Web.Debug.config">
@@ -136,7 +142,12 @@
       <Project>{fefc6994-9e05-446f-b11c-9304f1c8af8c}</Project>
       <Name>A3ClassLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL_Project\DAL_Project.csproj">
+      <Project>{e3026510-5b06-4ff2-816b-3f06cbe5f7df}</Project>
+      <Name>DAL_Project</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

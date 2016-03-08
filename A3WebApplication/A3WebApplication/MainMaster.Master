@@ -8,7 +8,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        9 MARKS TOTAL
+        <table>
+            <tr>
+                <td>
+                    <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+                    <asp:HyperLink ID="hlLogin" NavigateUrl="~/Login.aspx" runat="server">Login</asp:HyperLink>
+                    <asp:HyperLink ID="hlCategories" NavigateUrl="~/CategoriesPage.aspx" runat="server">Categories</asp:HyperLink>
+                    <asp:HyperLink ID="hlProducts" NavigateUrl="~/ProductsPage.aspx" runat="server">Products</asp:HyperLink>
+                    <asp:HyperLink ID="hlCartPage" NavigateUrl="~/CartPage.aspx" runat="server">Shopping Cart</asp:HyperLink>
+                    <asp:HyperLink ID="hlAdmin" NavigateUrl="~/AdminPage.aspx" Visible="false" runat="server">Admin Page</asp:HyperLink>
+                </td>
+            </tr>
+        </table>
+        <%--        9 MARKS TOTAL
         2 BONUS MARKS TOTAL
         TODO:
         - 5 MARKS: Make a consistent CSS theme (with CSS file), you may download one from the internet, you just have to impliment it.
@@ -16,7 +28,7 @@
         - 1 MARK: Show the Logout button only, if the customer is logged in
         - 1 MARK: Show a welcome message with the currently logged in Customer's email
         - 1 MARK: Show a link to the Admin area(s) if the Customer is logged in as an Admin
-        - BONUS 2 MARKS: show a number representing how many items are in the shopping cart right now
+        - BONUS 2 MARKS: show a number representing how many items are in the shopping cart right now--%>
         <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server"></asp:ContentPlaceHolder>
     </form>
 </body>

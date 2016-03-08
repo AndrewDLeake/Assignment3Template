@@ -18,7 +18,19 @@ namespace A3ClassLibrary
         // Create a method for creating a new Category based on a CategoryID passed
         // Example: CategoryID 3 is passed, 3 is used as an SQL Param to retrieve a matching row in the database with CategoryID 3
         // populate a new Category instance with the values returned from the database
-
+        public void CreateCategory()
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["dbA3ConnStr"].ConnectionString;
+            DAL_Project.DAL d = new DAL_Project.DAL(connStr);
+            d.AddParam("CategoryID", CategoryID);
+        }
+        public static void GetCategory(int CategoryID)
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["dbA3ConnStr"].ConnectionString;
+            DAL_Project.DAL d = new DAL_Project.DAL(connStr);
+            d.AddParam("CategoryID", CategoryID);
+            DataSet ds = d.ExecuteProcedure("spGetCategories");
+        }
         // BONUS 1 MARK: write method which impliments spInsertCategory
         // BONUS 1 MARK: write method which impliments spDeleteCategory
         // BONUS 1 MARK: write method which impliments spUpdateCategory
